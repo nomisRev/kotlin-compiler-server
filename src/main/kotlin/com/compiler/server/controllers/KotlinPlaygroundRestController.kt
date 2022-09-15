@@ -13,6 +13,15 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class KotlinPlaygroundRestController(private val kotlinProjectExecutor: KotlinProjectExecutor) {
 
+  @RequestMapping(
+    value = ["/versions"],
+    method = [RequestMethod.GET, RequestMethod.POST],
+    consumes = [MediaType.ALL_VALUE],
+    produces = [MediaType.APPLICATION_JSON_VALUE]
+  )
+  fun versions(): ResponseEntity<*> =
+    ResponseEntity.ok(kotlinProjectExecutor.getVersion())
+  
   /**
    * Endpoint for support requests from kotlin playground client.
    * Kotlin Playground component see: https://github.com/JetBrains/kotlin-playground

@@ -29,3 +29,8 @@ out/
 
 ### VS Code ###
 .vscode/
+
+indexes.json
+indexesJs.json
+1.7.20-RC-js/
+1.7.20-RC/
